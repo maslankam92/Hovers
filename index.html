@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <style>
+    :root {
+      --dark-blue-bg: #212f57;
+      --dark2-blue-bg: #1e2744;
+      --primary-green: #21e7b6;
+      --white-font: #f3f3f3;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: var(--white-font);
+      background-color: var(--dark-blue-bg);
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vm;
+    }
+
+    nav {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+    }
+
+    nav ul li a {
+      color: var(--white-font);
+      font-size: 1.3rem;
+      padding: 5px 10px;
+      text-decoration: none;
+    }
+
+    .container {
+      background-color: var(--dark2-blue-bg);
+      font-size: 1.2rem;
+      margin: 0 auto;
+      max-width: 800px;
+      position: relative;
+      padding: 1rem;
+    }
+
+    .container p {
+      border-bottom: 1px solid var(--primary-green);
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .container p:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .container hl {
+      background-color: var(--primary-green);
+      border-radius: 30px;
+      position: absolute;
+    }
+
+  </style>
+  <title>Hovers</title>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Company</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Support</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <p>
+    Lorem ipsum <a class="hl">dolor</a> sit amet, consectetur adipisicing elit. Ab ad aliquam aperiam beatae <a class="hl">commodi</a> consequuntur deleniti
+    dolorem dolores doloribus, error, ex excepudiandae velit veniam.
+  </p>
+  <p>
+    Lorem ipsum dolor sit <a class="hl">amet</a>, consectetur adipisicing elit. Ab ad aliquam aperiam beatae commodi consequuntur deleniti
+    dolorem dolores harum ipsa ipsum <a class="hl">laboriosam</a> maxime nam necessitatibus nihil
+    officiis optio, porro quibusdam quod ratione repudiandae velit veniam.
+  </p>
+  <p>
+    Lorem <a class="hl">ipsum</a> dolor sit amet, consectetur adipisicing elit. Ab ad aliquam deleniti
+    dolorem dolores doloribus, error, ex <a class="hl">excepturi</a> facere harum ipsa ipsum <a class="hl">laboriosam</a> maxime nam necessitatibus nihil
+    officiis optio, porro quibusdam quod ratione repudiandae velit veniam.
+  </p>
+  <p>
+    <a class="hl">Lorem</a> ipsum dolor sit amet, <a class="hl">consectetur</> adipisicing elit. Ab ad aliquam aperiam beatae commodi consequuntur deleniti
+    dolorem dolores doloribus, error, ex excepturi facere harum ipsa <a class="hl">ipsum</a> laboriosam maxime nam necessitatibus nihil
+    officiis optio, porro <a class="hl">quibusdam</a> quod ratione repudiandae velit veniam.
+  </p>
+</div>
+<script>
+
+</script>
+</body>
+</html>
