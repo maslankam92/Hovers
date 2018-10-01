@@ -8,7 +8,7 @@
     :root {
       --dark-blue-bg: #212f57;
       --dark2-blue-bg: #1e2744;
-      --primary-green: #21e7b6;
+      --primary-green: #1ec194;
       --white-font: #f3f3f3;
     }
 
@@ -49,11 +49,10 @@
     }
 
     .container {
-      background-color: var(--dark2-blue-bg);
+      /*background-color: var(--dark2-blue-bg);*/
       font-size: 1.2rem;
       margin: 0 auto;
       max-width: 800px;
-      position: relative;
       padding: 1rem;
     }
 
@@ -69,10 +68,18 @@
       border-bottom: 0;
     }
 
-    .container hl {
+    .container a {
+      font-weight: bold;
+    }
+
+    .hl {
       background-color: var(--primary-green);
       border-radius: 30px;
       position: absolute;
+      top: 0;
+      left: 0;
+      transition: .1s;
+      z-index: -1;
     }
 
   </style>
@@ -90,27 +97,41 @@
 </nav>
 <div class="container">
   <p>
-    Lorem ipsum <a class="hl">dolor</a> sit amet, consectetur adipisicing elit. Ab ad aliquam aperiam beatae <a class="hl">commodi</a> consequuntur deleniti
+    Lorem ipsum <a>dolor</a> sit amet, consectetur adipisicing elit. Ab ad aliquam aperiam beatae <a>commodi</a> consequuntur deleniti
     dolorem dolores doloribus, error, ex excepudiandae velit veniam.
   </p>
   <p>
-    Lorem ipsum dolor sit <a class="hl">amet</a>, consectetur adipisicing elit. Ab ad aliquam aperiam beatae commodi consequuntur deleniti
-    dolorem dolores harum ipsa ipsum <a class="hl">laboriosam</a> maxime nam necessitatibus nihil
+    Lorem ipsum dolor sit <a>amet</a>, consectetur adipisicing elit. Ab ad aliquam aperiam beatae commodi consequuntur deleniti
+    dolorem dolores harum ipsa ipsum <a>laboriosam</a> maxime nam necessitatibus nihil
     officiis optio, porro quibusdam quod ratione repudiandae velit veniam.
   </p>
   <p>
-    Lorem <a class="hl">ipsum</a> dolor sit amet, consectetur adipisicing elit. Ab ad aliquam deleniti
-    dolorem dolores doloribus, error, ex <a class="hl">excepturi</a> facere harum ipsa ipsum <a class="hl">laboriosam</a> maxime nam necessitatibus nihil
+    Lorem <a>ipsum</a> dolor sit amet, consectetur adipisicing elit. Ab ad aliquam deleniti
+    dolorem dolores doloribus, error, ex <a>excepturi</a> facere harum ipsa ipsum <a>laboriosam</a> maxime nam necessitatibus nihil
     officiis optio, porro quibusdam quod ratione repudiandae velit veniam.
   </p>
   <p>
-    <a class="hl">Lorem</a> ipsum dolor sit amet, <a class="hl">consectetur</> adipisicing elit. Ab ad aliquam aperiam beatae commodi consequuntur deleniti
-    dolorem dolores doloribus, error, ex excepturi facere harum ipsa <a class="hl">ipsum</a> laboriosam maxime nam necessitatibus nihil
-    officiis optio, porro <a class="hl">quibusdam</a> quod ratione repudiandae velit veniam.
+    <a>Lorem</a> ipsum dolor sit amet, <a>consectetur</a> adipisicing elit. Ab ad aliquam aperiam beatae commodi consequuntur deleniti
+    dolorem dolores doloribus, error, ex excepturi facere harum ipsa <a>ipsum</a> laboriosam maxime nam necessitatibus nihil
+    officiis optio, porro <a>quibusdam</a> quod ratione repudiandae velit veniam.
   </p>
 </div>
 <script>
+  const links = document.querySelectorAll('a');
+  const hl = document.createElement('span');
+  hl.classList.add('hl');
+  document.body.append(hl);
 
+  function addHighlight() {
+    const { top, left, width, height } = this.getBoundingClientRect();
+    Object.assign(hl.style, {
+      transform: `translate(${left}px, ${top}px)`,
+      height: `${height}px`,
+      width: `${width}px`
+    });
+  }
+
+  links.forEach(link => link.addEventListener('mouseenter', addHighlight));
 </script>
 </body>
 </html>
